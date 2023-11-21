@@ -1,8 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
-const Greeting = () => <h1>My First Component</h1>;
+// const Greeting = () => <h2 className="firstClass">My First Component</h2>
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+// jsx way of creating a component
+// const Greeting = () => React.createElement('h2', {}, 'Hello world')
 
-root.render(<Greeting />);
+const Greeting = () =>
+  React.createElement('div', {}, React.createElement('h2', {}, 'Hello world'))
+
+// rather calling createElement to nest any tags we could use jsx
+
+/* const NonGreeting = () => (
+  <div>
+    <h1>Hey</h1>
+  </div>
+)
+ */
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<Greeting />)
