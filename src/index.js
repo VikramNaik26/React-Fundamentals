@@ -20,9 +20,14 @@ import './index.css'
 )
  */
 
+const author = 'Rebecca Yarror'
+const title = 'Fourth Wing (The Empyrean, 1)'
+const img =
+  'https://images-na.ssl-images-amazon.com/images/I/91n7p-j5aqL._AC_UL600_SR600,400_.jpg'
+
 const BookList = () => {
   return (
-    <section className='booklist'>
+    <section className="booklist">
       <Book />
       <Book />
       <Book />
@@ -33,7 +38,7 @@ const BookList = () => {
 
 const Book = () => {
   return (
-    <article className='book'>
+    <article className="book">
       <Image />
       <Title />
       <Author />
@@ -41,14 +46,18 @@ const Book = () => {
   )
 }
 
-const Image = () => (
-  <img
-    src="https://images-na.ssl-images-amazon.com/images/I/91n7p-j5aqL._AC_UL600_SR600,400_.jpg"
-    alt="Fourth Wing"
-  />
-)
-const Title = () => <h2>Fourth Wing (The Empyrean, 1)</h2>
-const Author = () => <h4>Rebecca Yarror</h4>
+const Image = () => <img src={img} alt={title} />
+const Title = () => <h2>{title}</h2>
+const Author = () => {
+  // <h4 style={{ color: '617D98', fontSize: '.75rem', marginTop: '.5rem' }}>
+  /* const inlineHeadlineStyles = {
+    color: '617D98',
+    fontSize: '.75rem',
+    marginTop: '.5rem',
+  }
+  return <h4 style={inlineHeadlineStyles}>Rebecca Yarror</h4> */
+  return <h4>{author}</h4>
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
