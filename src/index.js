@@ -20,35 +20,36 @@ import './index.css'
 )
  */
 
-const author = 'Rebecca Yarror'
-const title = 'Fourth Wing (The Empyrean, 1)'
-const img =
-  'https://images-na.ssl-images-amazon.com/images/I/91n7p-j5aqL._AC_UL600_SR600,400_.jpg'
-
 const BookList = () => {
+  const author = 'Rebecca Yarror'
+  const title = 'Fourth Wing (The Empyrean, 1)'
+  const img =
+    'https://images-na.ssl-images-amazon.com/images/I/91n7p-j5aqL._AC_UL600_SR600,400_.jpg'
+
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book author={author} title={title} img={img} />
+      <Book author={author} title={title} img={img} />
+      <Book author={author} title={title} img={img} />
+      <Book author={author} title={title} img={img} />
     </section>
   )
 }
 
-const Book = () => {
+const Book = (props) => {
+  console.log(props)
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <Image img={props.img} />
+      <Title title={props.title} />
+      <Author author={props.author} />
     </article>
   )
 }
 
-const Image = () => <img src={img} alt={title} />
-const Title = () => <h2>{title}</h2>
-const Author = () => {
+const Image = (props) => <img src={props.img} alt={props.title} />
+const Title = (props) => <h2>{props.title}</h2>
+const Author = (props) => {
   // <h4 style={{ color: '617D98', fontSize: '.75rem', marginTop: '.5rem' }}>
   /* const inlineHeadlineStyles = {
     color: '617D98',
@@ -56,7 +57,7 @@ const Author = () => {
     marginTop: '.5rem',
   }
   return <h4 style={inlineHeadlineStyles}>Rebecca Yarror</h4> */
-  return <h4>{author}</h4>
+  return <h4>{props.author}</h4>
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
