@@ -35,7 +35,7 @@ const books = [
   },
 ]
 
-const Book = (props) => {
+/* const Book = (props) => {
   const { img, title, author } = props
   return (
     <article className="book">
@@ -44,9 +44,9 @@ const Book = (props) => {
       <Author author={author} />
     </article>
   )
-}
+} */
 
-/* const Book = ({ book: { img, title, author } }) => {
+const Book = ({ book: { img, title, author } }) => {
   // const { img, title, author } = props.book
   return (
     <article className="book">
@@ -55,7 +55,7 @@ const Book = (props) => {
       <Author author={author} />
     </article>
   )
-} */
+}
 
 const Image = (props) => <img src={props.img} alt={props.title} />
 const Title = (props) => <h2>{props.title}</h2>
@@ -75,8 +75,7 @@ const Author = (props) => {
 const bookList = books.map((book) => {
   // const { img, title, author, id } = book
   // console.log(img, title, author)
-  // return <Book book={book} key={book.id} />
-  return <Book {...book} key={book.id} />
+  return <Book book={book} key={book.id} />
   /* return <div>
     <h2>data</h2>
   </div> */
