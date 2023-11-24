@@ -110,7 +110,6 @@ const EventExample = () => {
   return (
     <section>
       <form onSubmit={handleFormSubmisson}>
-
         <h2>Typical Form</h2>
         <input
           type="text"
