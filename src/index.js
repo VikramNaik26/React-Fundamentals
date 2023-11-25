@@ -36,11 +36,24 @@ const books = [
 ]
 
 const Book = (props) => {
-  const { img, title, author } = props
+  // const { img, title, author, displayValue } = props
+  const { img, title, author, getBook, id } = props
+  const getSingleBook = () => {
+    getBook(id)
+  }
+  /*  const displayTitle = () => {
+    console.log(title)
+  } */
   return (
     <article className="book">
       <Image img={img} />
+
       <Title title={title} />
+      {/* <button onClick={displayTitle}>display title</button> */}
+      {/* <button onClick={displayValue}>click me</button> */}
+      {/* <button onClick={getBook}>click me</button> */}
+      {/* returns undefined so wrap the function with another function */}
+      <button onClick={getSingleBook}>click me</button>
       <Author author={author} />
     </article>
   )
@@ -76,52 +89,23 @@ const bookList = books.map((book) => {
   // const { img, title, author, id } = book
   // console.log(img, title, author)
   // return <Book book={book} key={book.id} />
-  return <Book {...book} key={book.id} />
+  /* const displayValue = () => {
+    console.log('value')
+  } */
+  // return <Book {...book} key={book.id} displayValue={displayValue} />
+
+  const getBook = (id) => {
+    const book = books.find((book) => book.id === id)
+    console.log(book)
+  }
+  return <Book {...book} key={book.id} getBook={getBook} />
   /* return <div>
     <h2>data</h2>
   </div> */
 })
 
 const BookList = () => {
-  return (
-    <section className="booklist">
-      <EventExample />
-      {bookList}
-    </section>
-  )
-}
-
-const EventExample = () => {
-  const handleFormInput = (e) => {
-    console.log(e.target.name)
-    console.log(e.target.value)
-    console.log('Handle form input')
-  }
-
-  const handleButtonClick = () => {
-    alert('Handle button click')
-  }
-
-  const handleFormSubmisson = (e) => {
-    e.preventDefault()
-    console.log('Handle form Submission')
-  }
-
-  return (
-    <section>
-      <form onSubmit={handleFormSubmisson}>
-
-        <h2>Typical Form</h2>
-        <input
-          type="text"
-          name="example"
-          style={{ margin: '1rem 0' }}
-          onChange={handleFormInput}
-        />
-      </form>
-      <button onClick={handleButtonClick}>Submit</button>
-    </section>
-  )
+  return <section className="booklist">{bookList}</section>
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
