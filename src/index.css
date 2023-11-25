@@ -65,3 +65,10 @@ body {
   background-color: #c35600;
   color: white;
 }
+
+h1 {
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 4rem;
+  color: black;
+}

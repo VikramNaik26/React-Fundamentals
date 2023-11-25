@@ -46,7 +46,12 @@ const bookList = books.map((book, index) => {
 })
 
 const BookList = () => {
-  return <section className="booklist">{bookList}</section>
+  return (
+    <>
+      <h1>Amazon Best Sellers</h1>
+      <section className="booklist">{bookList}</section>
+    </>
+  )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
