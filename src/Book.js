@@ -1,9 +1,9 @@
 const Book = (props) => {
   // const { img, title, author, displayValue } = props
-  const { img, title, author, getBook, id } = props
-  const getSingleBook = () => {
+  const { img, title, author, number } = props
+  /*   const getSingleBook = () => {
     getBook(id)
-  }
+  } */
   /*  const displayTitle = () => {
       console.log(title)
     } */
@@ -16,8 +16,9 @@ const Book = (props) => {
       {/* <button onClick={displayValue}>click me</button> */}
       {/* <button onClick={getBook}>click me</button> */}
       {/* returns undefined so wrap the function with another function */}
-      <button onClick={getSingleBook}>click me</button>
+      {/* <button onClick={getSingleBook}>click me</button> */}
       <Author author={author} />
+      <span className="number">#{number + 1}</span>
     </article>
   )
 }

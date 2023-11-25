@@ -25,7 +25,7 @@ import Book from './Book'
   </div> 
 }) */
 
-const bookList = books.map((book) => {
+const bookList = books.map((book, index) => {
   // const { img, title, author, id } = book
   // console.log(img, title, author)
   // return <Book book={book} key={book.id} />
@@ -34,11 +34,12 @@ const bookList = books.map((book) => {
   } */
   // return <Book {...book} key={book.id} displayValue={displayValue} />
 
-  const getBook = (id) => {
+  /*  const getBook = (id) => {
     const book = books.find((book) => book.id === id)
     console.log(book)
-  }
-  return <Book {...book} key={book.id} getBook={getBook} />
+  } */
+  // return <Book {...book} key={book.id} getBook={getBook} />
+  return <Book {...book} key={book.id} number={index} />
   /* return <div>
     <h2>data</h2>
   </div> */
